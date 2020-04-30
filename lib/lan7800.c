@@ -419,7 +419,7 @@ boolean LAN7800DeviceConfigure (TUSBFunction *pUSBFunction)
 	}
 
 	// init receive filtering engine
-	if (!LAN7800DeviceReadWriteReg (pThis, RFE_CTL, RFE_CTL_BCAST_EN | RFE_CTL_DA_PERFECT, ~0U))
+	if (!LAN7800DeviceReadWriteReg (pThis, RFE_CTL, RFE_CTL_BCAST_EN | RFE_CTL_MCAST_EN | RFE_CTL_UCAST_EN | RFE_CTL_DA_PERFECT, ~0U))
 	{
 		return FALSE;
 	}
